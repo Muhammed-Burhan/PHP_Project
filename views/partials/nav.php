@@ -8,9 +8,9 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="/basices/Dynamic%20Web%20Applications/" class="<?php echo urlIs('/basices/Dynamic%20Web%20Applications/')  ?  'bg-gray-900 text-white' : 'text-gray-300'  ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
-              <a href="/basices/Dynamic%20Web%20Applications/about.php" class="<?php echo urlIs('/basices/Dynamic%20Web%20Applications/about.php') ?  'bg-gray-900 text-white' : 'text-gray-300'  ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-              <a href="/basices/Dynamic%20Web%20Applications/contact.php" class="<?php echo urlIs('/basices/Dynamic%20Web%20Applications/contact.php') ?  'bg-gray-900 text-white' : 'text-gray-300'  ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+              <a href="/" class="<?php echo urlIs('/')  ?  'bg-gray-900 text-white' : 'text-gray-300'  ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+              <a href="/about" class="<?php echo urlIs('/about') ?  'bg-gray-900 text-white' : 'text-gray-300'  ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+              <a href="/contact" class="<?php echo urlIs('/contact') ?  'bg-gray-900 text-white' : 'text-gray-300'  ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
              
             </div>
           </div>
