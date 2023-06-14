@@ -15,10 +15,10 @@ class Database{
         ]);
     }
 
-    public function query($query){
+    public function query($query,$params=[]){
         
         $statement=$this->connection->prepare($query);
-        $statement->execute();
+        $statement->execute($params);
         //we say fetch data as associative array
         return $statement;
     }

@@ -9,7 +9,10 @@ $config=require('config.php');
 
 $db=new Database($config['database'],'root');
 
-$posts=$db->query("SELECT * FROM posts;")->fetchAll(PDO::FETCH_ASSOC);
+$id=$_GET['id'];
+$query="SELECT * FROM 
+posts where id= :id;";
+$posts=$db->query($query,[":id"=>$id])->fetchAll();
 
 
     foreach ($posts as $key=>$post) {
