@@ -8,24 +8,21 @@ $config=require('config.php');
 
 
 $db=new Database($config['database'],'root');
-
+$currentUserId=1;
 $note=$db->query(
-    "SELECT * FROM notes
+    "SELECT * FROM notes authorization
      WHERE id=:id",
      [
-   
      'id'=> $_GET['id']
-     ])->fetch();
+     ])->findOrFail();
 
-     if(!$note){
-        abort(Response::NOT_FOUND);
-     }
     
-     $currentUserId=1;
+    
+     
      $statusCode=403;
-    if($note['user_id']!==$currentUserId){
-        abort(Response::FORBIDDEN);
-    }
+
+     authorize($note['user_id']===$currentUserId,Response::FORBIDDEN);
+   
 
 
 require 'views/note.view.php';

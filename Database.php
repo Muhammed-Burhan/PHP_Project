@@ -3,7 +3,9 @@
 class Database{
     
     public $connection;
+    public $statement;
 
+    
     public function __construct($config,$username='root',$password=''){
         //by default  the http_build_query is used to create quey for url
         //we will use it for creating the dsn data for us
@@ -17,9 +19,30 @@ class Database{
 
     public function query($query,$params=[]){
         
-        $statement=$this->connection->prepare($query);
-        $statement->execute($params);
+        $this->statement=$this->connection->prepare($query);
+        $this->statement->execute($params);
         //we say fetch data as associative array
-        return $statement;
+        return $this;
+    }
+
+    public function get(){
+        $result=$this->statement->fetchAll();
+
+        return $result;
+    }
+
+     public function find(){
+        return $this->statement->fetch();
+    }
+
+    public function findOrFail(){
+        
+        $result=$this->find();
+
+        if(!$result){
+            abort();
+        }
+
+        return $result;
     }
 }
