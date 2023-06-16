@@ -11,7 +11,9 @@ require  __DIR__.'/../'."partials/banner.php"
         </p>
 
 
-        <form class="mb-6 " method="POST">
+      
+          <div class="mt-6  gap-x-6 	">
+           <form class=" flex items-center justify-start gap-x-6 " method="POST">
           <input hidden type="text" name="id" value=<?=$note['id']?>>
           <input hidden type="text" name="_method" value="DELETE">
         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
@@ -19,6 +21,12 @@ require  __DIR__.'/../'."partials/banner.php"
         </button>
         </form>
         
+        <div>
+        <a href="note/edit?id=<?=$note['id']?>" class="text-gray-500 border border-current py-1 px-4 rounded hover:bg-black hover:text-white">Edit</a>
+      </div>
+         </div>
+
+
         <br>
       <a href="/notes" class='  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
         Go back ....
