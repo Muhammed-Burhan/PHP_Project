@@ -1,7 +1,8 @@
 <?php 
-require "partials/head.php";
-require "partials/nav.php"; 
-require "partials/banner.php"
+
+require  __DIR__.'/../'."partials/head.php";
+require __DIR__.'/../'."/partials/nav.php"; 
+require  __DIR__.'/../'."partials/banner.php"
 ?>
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
@@ -21,8 +22,7 @@ require "partials/banner.php"
        
   </main>
 
-  <?php require "partials/footer.php" ?>
-
+  <?php require __DIR__."/../"."partials/footer.php" ?>
 
   <!-- [
     'id'=>1,'body'=>dsds,'user_id'
