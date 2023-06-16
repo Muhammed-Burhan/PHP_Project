@@ -1,4 +1,5 @@
 <?php 
-$heading="About Page";
 
-require 'views/contact.view.php';
+view('contact.view.php',[
+    'heading'=>"About Page"
+]);

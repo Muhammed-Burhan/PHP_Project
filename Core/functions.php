@@ -1,6 +1,6 @@
 <?php 
 
-
+use Core\Response;
 
 function dd($value){
     echo '<pre>';
@@ -22,4 +22,13 @@ function authorize($condition,$status=Response::FORBIDDEN){
 
     return;
 
+}
+
+function base_path($path){
+    return BASE_PATH.$path;
+}
+
+function view($path,$attributes=[]){
+    extract($attributes);
+    require base_path('views/'.$path);
 }
