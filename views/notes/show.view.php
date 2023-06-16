@@ -9,8 +9,11 @@ require  __DIR__.'/../'."partials/banner.php"
         <p class='mb-8'>
           <?=htmlspecialchars($note['body'])?>
         </p>
+
+
         <form class="mb-6 " method="POST">
           <input hidden type="text" name="id" value=<?=$note['id']?>>
+          <input hidden type="text" name="_method" value="DELETE">
         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                  Delete
         </button>

@@ -1,8 +1,6 @@
 <?php 
 
-
-
-
+use Core\Router;
 
 const BASE_PATH=__DIR__.'/../';
 
@@ -15,18 +13,19 @@ spl_autoload_register(function($class)
     require base_path("{$class}.php");
 });
 
-require base_path('Core/router.php');
+
+$router=new Router();
 
 
 
-// $id=$_GET['id'];
-// $query="SELECT * FROM 
-// posts where id= :id;";
-// $posts=$db->query($query,[":id"=>$id])->fetchAll();
+
+require base_path('routes.php');
+$uri=parse_url($_SERVER['REQUEST_URI'])['path'];
+
+$method=$_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 
-    // foreach ($posts as $key=>$post) {
-    //     echo "<li>{$post['title']}</li>";
-    // }
+$router->route($uri,$method);
+
 
 ?>
