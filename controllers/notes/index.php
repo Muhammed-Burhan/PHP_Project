@@ -1,13 +1,15 @@
-<?php 
+<?php
 
+use Core\App;
 use Core\Database;
 
 $heading="My Notes";
 
-$config=require base_path('config.php');
 
 
-$db=new Database($config['database'],'root');
+
+$db=$db=App::resolve(Database::class);
+
 
 $notes=$db->query("SELECT * FROM notes WHERE user_id=1")->get();
 

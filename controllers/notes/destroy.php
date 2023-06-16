@@ -1,13 +1,15 @@
-<?php 
+<?php
 
+use Core\App;
 use Core\Database;
 
 use Core\Response;
 
 
 
-$config=require base_path('config.php');
-$db=new Database($config['database'],'root');
+
+
+$db=App::resolve(Database::class);
 
 $currentUserId=1;
 
