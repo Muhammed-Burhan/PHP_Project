@@ -7,7 +7,7 @@ use Core\Validator;
 
 
 
-$db=$db=App::resolve(Database::class);
+$db=App::resolve(Database::class);
 
 $currentUserId=1;
 

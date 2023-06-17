@@ -12,10 +12,6 @@ $db=App::resolve(Database::class);
 
 $currentUserId=1;
 
-
-
-
-
 $note=$db->query(
     "SELECT * FROM notes 
      WHERE id=:id",

@@ -4,6 +4,8 @@ use Core\Router;
 
 const BASE_PATH=__DIR__.'/../';
 
+session_start();
+
 
 require BASE_PATH.'Core/functions.php';
 
@@ -25,7 +27,6 @@ $uri=parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $method=$_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
-echo $method;
 
 $router->route($uri,$method);
 

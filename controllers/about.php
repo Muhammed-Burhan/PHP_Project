@@ -1,9 +1,9 @@
 <?php 
 
-$heading="About Page";
+$heading='Hello '.$_SESSION['name'] ?? 'about page';
 
 
 
 view('about.view.php',[
-    'heading'=>'About page'
+    'heading'=>$heading
 ]);
