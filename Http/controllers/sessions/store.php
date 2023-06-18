@@ -23,5 +23,8 @@ $attributes=[
     
 //   
     Session::flash('errors',$form->getErrors());
+    Session::flash('old',[
+        'email'=>$attributes['email']
+    ]);
     return redirect('/login');
 
