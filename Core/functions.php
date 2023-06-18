@@ -1,6 +1,7 @@
 <?php 
 
 use Core\Response;
+use Core\Session;
 
 function dd($value){
     echo '<pre>';
@@ -44,6 +45,7 @@ function view($path,$attributes=[]){
 
 
 function redirect($path){
+ 
     header("Location:{$path}");
     exit();
 }
