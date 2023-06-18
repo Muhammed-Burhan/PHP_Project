@@ -46,7 +46,7 @@ $errors=[];
              
       
              
-     (new Authenticator())->login([
+       (new Authenticator())->login([
             'email'=>$email,
          
        ]);
