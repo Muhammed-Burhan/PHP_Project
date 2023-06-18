@@ -55,7 +55,14 @@ function logout(){
     $_SESSION=[];
     session_destroy();
 
-    $param=session_get_cookie_params();
+    if(ini_get("session.use_cookies")){
+        $param=session_get_cookie_params();
+        setcookie('PHPSESSID','',time()-3600,$param['path'],$param['domain'],$param['secure'],$param['httponly']);
+    }
 
-    setcookie('PHPSESSID','',time()-3600,$param['path'],$param['domain'],$param['secure'],$param['httponly']);
+    if (isset($_COOKIE[session_name()])) {
+        unset($_COOKIE[session_name()]);
+    }
+
+    session_unset();
 }

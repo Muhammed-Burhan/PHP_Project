@@ -54,16 +54,7 @@ class Router{
             if($route['uri'] === $uri && $route['method'] === strtoupper($method)){
                
                 Middleware::resolve($route['middleware']);
-
-                // if($route['middleware'] === 'guest'){
-                //     (new Guest)->handle();
-                // }
-
-                // if($route['middleware'] === 'auth'){
-                //     (new Auth)->handle();
-                // }
-
-               return  require base_path($route['controller']);
+               return  require base_path('Http/controllers/'.$route['controller']);
             }
         }
         $this->abort();
